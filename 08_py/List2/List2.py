@@ -53,8 +53,11 @@ sum13([13, 1, 2, 13, 2, 1, 13]) #→ 3
 sum13([]) #→ 0
 sum13([1, 2, 2, 1, 13]) #→ 6
 
-#params: nums is an array of ints
-#
+# params: nums is an array of ints
+# iterate through the array, while using a boolean to detect if a 6 has already been encountered, and no 7 has been seen yet.
+# if a 6 has been encountered, set the boolean to true, telling the function to not add any other elements until an encounter with a 7 sets the boolean to false.
+# the if-statements for 6 and 7 have to be placed around the sum-adder if-statement so that any 6s or 7s are not added. 
+# * the 7 is still added if it doesnt change the boolean.
 def sum67(nums):
   inBetween = False
   sum = 0
@@ -67,8 +70,20 @@ def sum67(nums):
       inBetween = False
   return sum
 
+sum67([]) #→ 0
+sum67([2, 7, 6, 2, 6, 2, 7]) #→ 9
+sum67([1, 2, 2, 6, 99, 99, 7]) #→ 5
+
+# params: nums is an array of ints
+# iterate through the array, excluding the last element to prevent any index out of bounds errors — 
+# this is becuase we checked to see if both the current element and the element right after it were equal to 2.
+# if this never happens throughout the array, return false. return true if both elements are 2.
 def has22(nums):
   for i in range(len(nums) -1):
     if nums[i] == 2 and nums[i+1] == 2:
       return True
   return False
+
+has22([2, 2, 1, 2]) #→ True
+has22([2]) #→ False
+has22([5, 2, 5, 2]) #→ False
