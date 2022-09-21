@@ -6,7 +6,7 @@ first_last6([1, 2, 6]) #→ True
 first_last6([1, 2, 3, 8]) #→ False
 first_last6([6, 6, 6]) #→ True
 
-#First check to see if the array has at least 1 element, then check to see if the first and last elements are equal.
+# First check to see if the array has at least 1 element, then check to see if the first and last elements are equal.
 def same_first_last(nums):
   return len(nums) > 0 and nums[0] == nums[-1]
 
@@ -20,6 +20,7 @@ def make_pi():
 
 make_pi()
 
+# params: a, b - are both int arrays with length of 1 or greater.
 # First check to see if the arrays have the same elements at index 0, then check their last elements.
 def common_end(a, b):
   return (a[0] == b[0]) or a[-1] == b[-1]
@@ -28,7 +29,8 @@ common_end([1, 2, 3], [7, 3]) #→ True
 common_end([1, 2, 3], [7, 3, 2]) #→ False
 common_end([1, 2, 3], [1, 3]) #→ True
 
-# Return the sum of all the three elements, nums has len 3.
+# params: nums is an array with length 3.
+# Return the sum of all the three elements.
 def sum3(nums):
   return nums[0] + nums[1] + nums[2]
 
