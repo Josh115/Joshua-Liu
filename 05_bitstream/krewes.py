@@ -8,7 +8,6 @@ DISCO:
 QCC:
     
 """
-
 import random as rng
 
 # Reads a file named [fileName] and parses it, and returns the krewes dictionary, with the period number as the keys and (devo, ducky) tuples as the values 
