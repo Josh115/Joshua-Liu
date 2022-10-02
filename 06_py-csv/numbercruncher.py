@@ -17,7 +17,7 @@ def main():
 def parseinfo(file, jobs, weight):
     occ_wei = open(file, "r").read()
     
-    # Creates a list of all occupation,weight pairs, excluding the first and last lines, which aren't relevant.
+    # Creates a list of all occupation,weight pairs, excluding the first line, which isn't relevant.
     occ_wei = occ_wei.split("\n")[1:]
     
     for pair in occ_wei:
