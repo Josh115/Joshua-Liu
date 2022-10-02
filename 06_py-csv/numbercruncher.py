@@ -10,7 +10,7 @@ import random
 def main():
     jobs = []
     weight = []
-    # parseinfo takes in a csv file and 2 lists. It parses the jobs in the csv file to the jobs list and the weights to the weight list, including the total
+    # parseinfo takes in a csv file and 2 lists. It parses the jobs in the csv file to the jobs list and the weights to the weight list, not including the total
     parseinfo("occupations.csv", jobs, weight)
     print(random.choices(jobs, weights = weight))
     
