@@ -1,7 +1,10 @@
 '''
-Team:
-DISCO:
+Team J: Joshua Liu, Joseph Jeon
+DISCO: 
+    rsplit() splits the element from the right, and you can add another argument to determine how many times to split.
+    random.choices() can be used to choose from a weighted list. The second argument sets the weights for each of the corresponding elements in the first list.
 QCC:
+    We still have to test if the weighted choices are chosen with the correct weights.
 '''
 
 import random
