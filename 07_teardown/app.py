@@ -16,8 +16,8 @@ app.run()  # Q5: Where have you seen similar constructs in other languages?
 DISCO:
 
 QCC:
-0. 
-1. 
+0. We've never seen this
+1. It reroutes 
 2. 
 3. 
 4. 
