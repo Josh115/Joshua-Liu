@@ -1,6 +1,7 @@
-# Clyde 'Thluffy' Sinclair
+# TNPG: Worship Warships, Samson, Joshua, Aahan
 # SoftDev
 # Oct 2022
+# Time Spent: 
 
 from flask import Flask, render_template #Q0: What will happen if you remove render_template from this line? (log your prediction before you pull the trigger...)
 app = Flask(__name__)
