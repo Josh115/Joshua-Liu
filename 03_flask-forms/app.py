@@ -1,6 +1,6 @@
-# Clyde 'Thluffy' Sinclair
-# SoftDev
-# Oct 2022
+# TNPG: Worship Warship, Roster: Samson, Joshua, Aahan 
+# Time Spent: 
+# DISCO:
 
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
@@ -30,21 +30,21 @@ PROTIP: Insert your own in-line comments
 
 @app.route("/") #, methods=['GET', 'POST'])
 def disp_loginpage():
-    print("\n\n\n")
+    print("\n\n\n") #3 new lines
     print("***DIAG: this Flask obj ***")
-    print(app)
+    print(app) #Prediction: prints out this Flask object in terminal
     print("***DIAG: request obj ***")
-    print(request)
+    print(request) #Request is probably somthing packaged inside Flask.
     print("***DIAG: request.args ***")
-    print(request.args)
-    #print("***DIAG: request.args['username']  ***")
-    #print(request.args['username'])
+    print(request.args) #What is sub1 and Submit Query?
+    # print("***DIAG: request.args['username']  ***")
+    # print(request.args['username']) #Prediction: prints all the usernames in a list in terminal
     print("***DIAG: request.headers ***")
-    print(request.headers)
-    return render_template( 'login.html' )
+    print(request.headers) #No idea?????
+    return render_template( 'login.html' ) #Prediction: Will display everything that login.html 
 
 
-@app.route("/auth") # , methods=['GET', 'POST'])
+@app.route("/auth") #, methods=[ 'POST'])
 def authenticate():
     print("\n\n\n")
     print("***DIAG: this Flask obj ***")
@@ -53,10 +53,10 @@ def authenticate():
     print(request)
     print("***DIAG: request.args ***")
     print(request.args)
-    #print("***DIAG: request.args['username']  ***")
-    #print(request.args['username'])
+    print("***DIAG: request.args['username']  ***") #Works only when its uncommented here
+    print(request.args['username']) #prints the inputted user
     print("***DIAG: request.headers ***")
-    print(request.headers)
+    print(request.headers) #Accesses the args and puts them in a list
     return "Waaaa hooo HAAAH"  #response to a form submission
 
 
