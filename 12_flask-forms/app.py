@@ -14,23 +14,6 @@ from flask import request           #facilitate form submission
 
 app = Flask(__name__)    #create Flask object
 
-
-'''
-trioTASK:
-~~~~~~~~~~~ BEFORE RUNNING THIS, ~~~~~~~~~~~~~~~~~~
-...read for understanding all of the code below.
-Some will work as written; other sections will not. 
-TASK: Predict which...
-Devise some simple tests you can run to "take apart this engine," as it were.
-Execute your tests.
-Process results.
-
-PROTIP: Insert your own in-line comments
- wherever they will help
-  your future self and/or current teammates
-   understand what is going on.
-'''
-
 @app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
     return render_template( 'login.html' )
@@ -39,10 +22,12 @@ def disp_loginpage():
 @app.route("/response", methods=['GET', 'POST'])
 def authenticate():
     print(request.form)
-    if(request.method == 'POST'):
-        return render_template('response.html', username = request.form.get('username'))  #response to a form submission
+    if(request.method == 'GET'):
+        return render_template('response.html', username = request.args.get('username'), Method = request.method)
     else:
-        return render_template('response.html', username = request.args.get('username'))
+        return render_template('response.html', username = request.form.get('username'), Method = request.method)
+    #response to a form submission
+
 
     
 if __name__ == "__main__": #false if this file imported as module
