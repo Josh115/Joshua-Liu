@@ -1,7 +1,5 @@
 
 .container{ /*setting a max and min width for all the elements*/
-	min-width:760px;
-	max-width:760px;
 	background: rgb(100,100,100);
 	margin:auto;
 	padding: 5px 10px 5px 10px;
