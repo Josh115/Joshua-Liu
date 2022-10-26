@@ -15,20 +15,16 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 
 #==========================================================
 
-
+c.execute("create table students(f1)")
 # < < < INSERT YOUR TEAM'S POPULATE-THE-DB CODE HERE > > >
-def openCSV(csvF):
-    with open (csvF, newline='') as csvfile:
-        Return_dict_reader = csv.DictReader(csvfile)
-        #example row in students: {'name': 'alison', 'age': '23', 'id': '10'}
-        for row in Return_dict_reader:
-            print(row)
-        return Return_dict_reader
+with open ("students.csv") as csvfile:
+    Return_dict_reader = csv.DictReader(csvfile)
+    #example row in students: {'name': 'alison', 'age': '23', 'id': '10'}
+    for row in Return_dict_reader:
+        c.executescript("insert into students values(" + row.get('name') + " );")
 
-students = openCSV("students.csv")
-courses = openCSV("courses.csv")
 
-print(students)
+
 
 command = ""          # test SQL stmt in sqlite3 shell, save as string
 c.execute(command)    # run SQL statement
