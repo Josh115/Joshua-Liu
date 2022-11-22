@@ -1,8 +1,12 @@
 '''
 TPNG: JoY
 ROSTER: Yuki Feng, Joshua Liu
+DISCO:
+    requests module can be used to send get requests.
+    .json() can be used to parse the request object into a json dictionary.
 QCC:
-
+    image is cool.
+Time Spent: 1.5
 '''
 
 from flask import Flask, render_template
@@ -19,8 +23,9 @@ def index():
     url = "https://api.nasa.gov/planetary/apod?api_key=" + key
     #print("URL : " + url)
     data = requests.get(url).json()
-    #print(data.json())
-    return render_template("main.html")
+    image_url = data["url"]
+    ex = data["explanation"]
+    return render_template("main.html", image=image_url, explanation=ex)
 
 if __name__ == "__main__":
     app.debug = True
