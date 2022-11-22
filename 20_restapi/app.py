@@ -5,13 +5,22 @@ QCC:
 
 '''
 
-from Flask import Flask
+from flask import Flask, render_template
+import requests
 
 app = Flask(__name__)
 
-@app.route("/main")
+@app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template()
+    key = "DEMO_KEY"
+    with open("key_nasa.txt") as file:
+        key = file.read()
+        #print("KEY: " + key)
+    url = "https://api.nasa.gov/planetary/apod?api_key=" + key
+    #print("URL : " + url)
+    data = requests.get(url).json()
+    #print(data.json())
+    return render_template("main.html")
 
 if __name__ == "__main__":
     app.debug = True
