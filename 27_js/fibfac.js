@@ -13,9 +13,20 @@ function fact(a) {
 }
 
 function fib(a){
-    if( a <= 1){
-        return a 
-    } else {
-        return (fib(a - 1) + fib(a - 2))
+    if(a == 0 || a == 1){
+        return a
     }
+    var count = 2
+    var kot1 = 1
+    var kot2 = 1
+    var kot3 = 1
+
+    while(count < a){
+        var temp = kot3
+        kot3 = kot3 + kot2
+        kot1 = kot2
+        kot2 = temp
+        count++
+    }
+    return kot3
  }
