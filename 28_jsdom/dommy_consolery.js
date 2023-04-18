@@ -66,7 +66,7 @@ var removeItem = function(n) { // removes item by index on the ol
 };
 
 
-var red = function() { // adds the red clsss to all <li>
+var red = function() { // adds the red clsss to all <li>, Does not change the already colored items to red
   var items = document.getElementsByTagName("li");
   for(var i = 0; i < items.length; i++) {
     items[i].classList.add('red');
@@ -107,7 +107,8 @@ var fib = (a) => {
       count++
   }
   return kot3
-}
+  
+};
 
 var fac = (a) => {
   if(a <= 1){
@@ -115,7 +116,24 @@ var fac = (a) => {
   } else{
       return fac(a - 1) * a
   }
-}
+};
+
+var gcd = (a, b) => {
+  if(a < b){
+    c = a;
+  }else{
+    c = b;
+  }
+  while (!(a % c == 0 && b % c == 0)){
+    if(c > a && c > b){
+      return 1;
+    }
+    c--;
+  }
+  return c;
+};
+
+console.log(addItem(fib(10)));
 
 // In addition to the style shown above,
 //  you are encouraged to test drive the "arrow function syntax" as shown below.
