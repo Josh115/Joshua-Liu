@@ -2,7 +2,7 @@
 var c = document.getElementById("playground");
 var dotButton = document.getElementById("buttonCircle");
 var stopButton = document.getElementById("buttonStop");
-
+var waitButton = document.getElementById("buttonWaiting");
 
 var ctx = c.getContext("2d");
 
@@ -42,8 +42,8 @@ var dvdLogoSetup = function() {
     var rectWidth = 60;
     var rectHeight = 40;
 
-    var canvasX = Math.floor(Math.random() * 450);
-    var canvasY = Math.floor(Math.random() * 450);
+    var rectX = Math.floor(Math.random() * 450);
+    var rectY = Math.floor(Math.random() * 450);
 
     var Xvel = 1;
     var Yvel = 1;
@@ -52,10 +52,18 @@ var dvdLogoSetup = function() {
     logo.src = "logo_dvd.jpg";
 
     var dvdlogo = function() {
-        ctx.clearRect( 0 , 0, c.Width, c.height );
+        clear();
         
-        ctx.drawImage( logo, canvasX, canvasY, rectWidth, rectHeight);
+        ctx.drawImage( logo, rectX, rectY, rectWidth, rectHeight);
+        
+        if (rectX == 0) {
 
+        }
+        if (rectY == 0) {
+
+        }
+        rectX += Xvel;
+        rectY += Yvel;
         requestID = window.requestAnimationFrame(dvdlogo);
     };
     dvdlogo();
