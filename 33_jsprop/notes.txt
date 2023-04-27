@@ -1,0 +1,8 @@
+DISCO:
+    1.  Events are run from bottom to the top of the DOM tree by default 
+    2.  The 'capture' parameter in addeventlistener() this is defaulted to false. When set to true, 
+        the event will be put firts, before the ones beneath it in the DOM.
+QCC:
+    1.  What other parameters can you put into addeventlistener()
+    2.  
+    3.

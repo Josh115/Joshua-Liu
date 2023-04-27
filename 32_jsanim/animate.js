@@ -50,10 +50,10 @@ var dvdLogoSetup = function () {
 
     var logo = new Image();
     logo.src = "logo_dvd.jpg";
-
+    
     var dvdlogo = function () {
         clear();
-
+        
         ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
 
         if (rectX <= 0 || rectX >= 428) {
